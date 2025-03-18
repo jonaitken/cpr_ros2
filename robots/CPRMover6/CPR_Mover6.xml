@@ -1,0 +1,49 @@
+<ROBOT>
+	<INFO NAME="Mover6" AUTHOR="Christian Meyer"/>
+<BusConfiguration Protocol="CPRCAN" CycleTimeMS="50" GapMS="5" Type="PCANUSB" ContinuousDOut="true">
+    <Joints NrOfJoints="6" />
+    <!-- Attention: In this case 16 (means 0x20) is the sender message id, 17 (0x21) is the anser message id.-->
+    <Joint0 ID="16" Min="-170.0" Max="170.0" CurrentScale="3.0" CurrentZero="70.0" GearScale="-65.87" GearZero="32000" GearPlay="1.4" GearPlayInc="0.3"/>
+    <Joint1 ID="32" Min="-170.0" Max="170.0" CurrentScale="3.0" CurrentZero="70.0" GearScale="-65.87" GearZero="32000" GearPlay="0.0" GearPlayInc="0.5"/>
+    <Joint2 ID="48" Min="-170.0" Max="170.0" CurrentScale="3.0" CurrentZero="70.0" GearScale="65.87" GearZero="32000" GearPlay="0.0" GearPlayInc="0.5"/>
+    <Joint3 ID="64" Min="-170.0" Max="170.0" CurrentScale="3.0" CurrentZero="70.0" GearScale="-69.71" GearZero="32000" GearPlay="0.0" GearPlayInc="0.5"/>
+    <Joint4 ID="80" Min="-90.0" Max="90.0" CurrentScale="1.0" CurrentZero="40.0" GearScale="3.2" GearZero="500 " GearPlay="0.0" GearPlayInc="0.5"/>
+    <Joint5 ID="96" Min="-170.0" Max="170.0" CurrentScale="1.0" CurrentZero="40.0" GearScale="3.2" GearZero="509" GearPlay="0.0" GearPlayInc="0.5"/>
+   <!-- Definition of digital IO channels. Depending on the version there are 3 or 4 digital out in the base, Dout 10 and 11 control the gripper. 
+	     There are also 3 or 4 digital Inputs in the base.
+		 Using these parameters it can be controlled to which virtual DIO they are mapped.
+		 Module defines the joint controller, port the physical dio port on the controller board. -->
+     <DOut Number="0" Module="0" Port="1" Name="DOut"/>
+    <DOut Number="1" Module="0" Port="0" Name="DOut"/>
+    <DOut Number="2" Module="0" Port="2" Name="DOut"/>
+    <DOut Number="3" Module="0" Port="3" Name="DOut"/>
+    <DOut Number="4" Module="0" Port="0" Name="DOut"/>
+    <DOut Number="5" Module="0" Port="0" Name="DOut"/>
+    <DOut Number="6" Module="0" Port="0" Name="DOut"/>
+    <DOut Number="7" Module="0" Port="0" Name="DOut"/>
+    <DOut Number="8" Module="0" Port="0" Name="DOut"/>
+    <DOut Number="9" Module="0" Port="0" Name="DOut"/>
+    <DOut Number="10" Module="3" Port="0" Name="Gripper Open"/>
+    <DOut Number="11" Module="3" Port="1" Name="Gripper Enable"/>
+    <DIn Number="0" Module="0" Port="0" Name="DIn"/>
+    <DIn Number="1" Module="0" Port="1" Name="DIn"/>
+    <DIn Number="2" Module="0" Port="2" Name="DIn"/>
+    <DIn Number="3" Module="0" Port="3" Name="DIn"/>
+  </BusConfiguration>
+  
+  
+  <Kinematic Type="StandardSixAxisPlus" Wrist="Standard" lz0="130.0" lx1="0.0" lz1="62.5" lx2 ="190.0" lx3="0.0" lz3="60.0" lx4="290.0" lx6="75.0"/>
+  <CartesianOffset Enabled="false"/>
+  <ManufacturerJointConfig zOffset="0.0" A1Dir="1.0" A1Offset="0.0"  A2Dir="1.0" A2Offset="0.0"  A3Dir="1.0" A3Offset="90.0"  A4Dir="1.0" A4Offset="0.0"  A5Dir="1.0" A5Offset="0.0"  A6Dir="1.0" A6Offset="0.0" />
+  <SoftwareMinMax A1Min="-130.0" A1Max="130.0" A2Min="-50.0" A2Max="60.0" A3Min="-110.0" A3Max="75" A4Min="-140.0" A4Max="140.0" A5Min="-70.0" A5Max="60.0" A6Min="-120.0" A6Max="120.0"/>
+  <JointVelocities A1="30.0" A2="30.0" A3="30" A4="30" A5="40" A6="100" />
+ 
+  <!--Definition of epsilon values for the singularities. Wrist in degree, Center and Ellbow in mm-->
+  <SINGULARITIES Wrist="5.0" Center="100.0" Ellbow="20.0"/>
+  <Velocities JogCart="200.0" JogOri="45" JogJoint="1.0"/>
+
+  <VirtualBox active="false" xMin="450.0" xMax="1700.0" yMin="-1300.0" yMax ="1300.0" zMin ="800.0" zMax="1700.0" bMin="45.0" bMax="135.0"/>
+  <Graphics detailed="true" CSSize="50.0"/>
+  <Trail active="true" PointSize="2.0" PointDist="10.0" ColorR="1.0" ColorG="0.4" ColorB="0.0" />
+
+</ROBOT>

@@ -1,0 +1,6 @@
+string sender
+---
+string model
+uint32 countjoints
+string[] inputchannels
+string[] outputchannels

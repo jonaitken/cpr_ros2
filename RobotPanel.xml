@@ -1,0 +1,9 @@
+<library path="cpr_ros2/bin/cpr_ros2/lib/libRobotPanel">
+  <class name="cpr_ros2/RobotPanel"
+         type="cpr_ros2::RobotPanel"
+         base_class_type="rviz_common::Panel">
+    <description>
+      A panel widget allowing simple diff-drive style robot base control.
+    </description>
+  </class>
+</library>

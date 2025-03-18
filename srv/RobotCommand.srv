@@ -1,0 +1,5 @@
+string sender
+uint32 commandid
+float64 payloadfloat
+int64 payloadint
+---
